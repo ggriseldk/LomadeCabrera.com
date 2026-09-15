@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Loma de Cabrera | Descubre nuestro pueblo</title>
+
+
+    <style>
+
+        /* =========================================
+           CONFIGURACIÓN GENERAL
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #071525;
+            color: white;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================================
+           COLORES PRINCIPALES
+        ========================================= */
+
+        :root {
+
+            --azul-oscuro: #071525;
+
+            --azul-principal: #0d2740;
+
+            --azul-card: #103653;
+
+            --azul-borde: #1e5d91;
+
+            --azul-claro: #4db8ff;
+
+            --azul-hover: #8bd1ff;
+
+            --texto: #ffffff;
+
+            --texto-suave: #c2d7e6;
+
+            --texto-gris: #91abc0;
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: rgba(7, 21, 37, 0.96);
+
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid var(--azul-borde);
+        }
+
+        .logo {
+
+            color: var(--azul-claro);
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+        }
+
+        nav {
+
+            display: flex;
+
+            gap: 25px;
+        }
+
+        nav a {
+
+            color: var(--texto-suave);
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+
+            color: var(--azul-claro);
+        }
+
+
+        /* =========================================
+           HERO / INICIO
+        ========================================= */
+
+        .hero {
+
+            min-height: 92vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            position: relative;
+
+            background:
+
+                linear-gradient(
+                    rgba(7, 21, 37, 0.60),
+                    rgba(7, 21, 37, 0.96)
+                ),
+
+                url("https://images.unsplash.com/photo-1500534623283-312aade485b7");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .hero-contenido {
+
+            max-width: 900px;
+        }
+
+        .hero small {
+
+            color: var(--azul-claro);
+
+            letter-spacing: 5px;
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+        .hero h1 {
+
+            font-size: clamp(45px, 8vw, 85px);
+
+            line-height: 1;
+
+            margin: 25px 0;
+        }
+
+        .hero h1 span {
+
+            color: var(--azul-claro);
+        }
+
+        .hero p {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            color: var(--texto-suave);
+
+            font-size: 18px;
+        }
+
+        .hero-botones {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+
+            margin-top: 35px;
+        }
+
+        .boton {
+
+            display: inline-block;
+
+            padding: 13px 23px;
+
+            border-radius: 5px;
+
+            background: var(--azul-claro);
+
+            color: var(--azul-oscuro);
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .boton:hover {
+
+            background: var(--azul-hover);
+
+            transform: translateY(-3px);
+        }
+
+        .boton-secundario {
+
+            background: transparent;
+
+            color: white;
+
+            border: 1px solid var(--azul-claro);
+        }
+
+        .boton-secundario:hover {
+
+            background: var(--azul-claro);
+
+            color: var(--azul-oscuro);
+        }
+
+
+        /* =========================================
+           SECCIONES
+        ========================================= */
+
+        section {
+
+            padding: 90px 8%;
+        }
+
+        .titulo {
+
+            max-width: 750px;
+
+            margin: 0 auto 50px;
+
+            text-align: center;
+        }
+
+        .titulo small {
+
+            color: var(--azul-claro);
+
+            letter-spacing: 3px;
+
+            font-weight: bold;
+        }
+
+        .titulo h2 {
+
+            font-size: 40px;
+
+            margin: 10px 0 15px;
+        }
+
+        .titulo p {
+
+            color: var(--texto-gris);
+
+            font-size: 16px;
+        }
+
+
+        /* =========================================
+           INTRODUCCIÓN
+        ========================================= */
+
+        .introduccion {
+
+            background: var(--azul-principal);
+
+            border-bottom: 1px solid var(--azul-borde);
+        }
+
+        .intro-grid {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+        .intro-texto h2 {
+
+            font-size: 40px;
+
+            margin-bottom: 20px;
+        }
+
+        .intro-texto h2 span {
+
+            color: var(--azul-claro);
+        }
+
+        .intro-texto p {
+
+            color: var(--texto-suave);
+
+            margin-bottom: 15px;
+        }
+
+        .intro-imagen img {
+
+            width: 100%;
+
+            height: 400px;
+
+            object-fit: cover;
+
+            border-radius: 12px;
+
+            border: 1px solid var(--azul-borde);
+        }
+
+
+        /* =========================================
+           DESTACADOS
+        ========================================= */
+
+        .destacados {
+
+            background: var(--azul-oscuro);
+        }
+
+        .grid {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .card {
+
+            background: var(--azul-card);
+
+            border: 1px solid var(--azul-borde);
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+
+            transform: translateY(-8px);
+
+            border-color: var(--azul-claro);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-imagen {
+
+            width: 100%;
+
+            height: 220px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .card-contenido {
+
+            padding: 25px;
+        }
+
+        .card-contenido .categoria {
+
+            color: var(--azul-claro);
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+        }
+
+        .card h3 {
+
+            margin: 8px 0 10px;
+
+            font-size: 22px;
+        }
+
+        .card p {
+
+            color: var(--texto-suave);
+
+            font-size: 15px;
+
+            margin-bottom: 20px;
+        }
+
+        .link {
+
+            color: var(--azul-claro);
+
+            font-weight: bold;
+
+            font-size: 14px;
+        }
+
+        .link:hover {
+
+            color: var(--azul-hover);
+        }
+
+
+        /* =========================================
+           HOSPEDAJE
+        ========================================= */
+
+        .hospedaje {
+
+            background: var(--azul-principal);
+
+            border-top: 1px solid var(--azul-borde);
+
+            border-bottom: 1px solid var(--azul-borde);
+        }
+
+        .hotel-card {
+
+            padding: 28px;
+
+            background: var(--azul-card);
+
+            border: 1px solid var(--azul-borde);
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+        .hotel-card:hover {
+
+            border-color: var(--azul-claro);
+
+            transform: translateY(-5px);
+        }
+
+        .hotel-icono {
+
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+        .hotel-card h3 {
+
+            color: var(--azul-claro);
+
+            margin-bottom: 10px;
+        }
+
+        .hotel-card p {
+
+            color: var(--texto-suave);
+
+            margin-bottom: 18px;
+        }
+
+        .hotel-info {
+
+            color: var(--texto-gris);
+
+            font-size: 14px;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================================
+           GASTRONOMÍA
+        ========================================= */
+
+        .gastronomia {
+
+            background: var(--azul-oscuro);
+        }
+
+        .comida {
+
+            background: var(--azul-card);
+
+            border: 1px solid var(--azul-borde);
+
+            border-radius: 10px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .comida:hover {
+
+            border-color: var(--azul-claro);
+
+            transform: translateY(-5px);
+        }
+
+        .comida-icono {
+
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+        .comida h3 {
+
+            color: var(--azul-claro);
+
+            margin-bottom: 10px;
+        }
+
+        .comida p {
+
+            color: var(--texto-suave);
+
+            font-size: 15px;
+        }
+
+
+        /* =========================================
+           NEGOCIOS
+        ========================================= */
+
+        .negocios {
+
+            background: var(--azul-principal);
+
+            border-top: 1px solid var(--azul-borde);
+
+            border-bottom: 1px solid var(--azul-borde);
+        }
+
+        .negocio {
+
+            padding: 28px;
+
+            background: var(--azul-card);
+
+            border: 1px solid var(--azul-borde);
+
+            border-radius: 10px;
+        }
+
+        .negocio-icono {
+
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+        .negocio h3 {
+
+            color: var(--azul-claro);
+
+            margin-bottom: 10px;
+        }
+
+        .negocio p {
+
+            color: var(--texto-suave);
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================================
+           EVENTOS
+        ========================================= */
+
+        .eventos {
+
+            background: var(--azul-oscuro);
+        }
+
+        .evento {
+
+            display: grid;
+
+            grid-template-columns: 100px 1fr;
+
+            gap: 25px;
+
+            padding: 25px;
+
+            background: var(--azul-card);
+
+            border: 1px solid var(--azul-borde);
+
+            border-radius: 10px;
+        }
+
+        .fecha {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: var(--azul-claro);
+
+            color: var(--azul-oscuro);
+
+            border-radius: 8px;
+
+            padding: 10px;
+        }
+
+        .fecha strong {
+
+            font-size: 28px;
+        }
+
+        .fecha span {
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+        .evento h3 {
+
+            color: var(--azul-claro);
+
+            margin-bottom: 8px;
+        }
+
+        .evento p {
+
+            color: var(--texto-suave);
+        }
+
+
+        /* =========================================
+           HISTORIA
+        ========================================= */
+
+        .historia {
+
+            background: var(--azul-principal);
+
+            border-top: 1px solid var(--azul-borde);
+
+            border-bottom: 1px solid var(--azul-borde);
+        }
+
+        .historia-contenido {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .historia-contenido p {
+
+            color: var(--texto-suave);
+
+            font-size: 17px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================
+           GALERÍA
+        ========================================= */
+
+        .galeria {
+
+            background: var(--azul-oscuro);
+        }
+
+        .galeria-grid {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+        }
+
+        .galeria-grid img {
+
+            width: 100%;
+
+            height: 220px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+            border: 1px solid var(--azul-borde);
+
+            transition: 0.3s;
+        }
+
+        .galeria-grid img:hover {
+
+            transform: scale(1.03);
+
+            border-color: var(--azul-claro);
+        }
+
+
+        /* =========================================
+           CONTACTO
+        ========================================= */
+
+        .contacto {
+
+            text-align: center;
+
+            background: var(--azul-principal);
+
+            border-top: 1px solid var(--azul-borde);
+        }
+
+        .contacto p {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            color: var(--texto-suave);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            text-align: center;
+
+            padding: 35px 20px;
+
+            background: #050f1a;
+
+            color: #7096b5;
+
+            font-size: 13px;
+
+            border-top: 1px solid var(--azul-borde);
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 900px) {
+
+            header {
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 12px;
+            }
+
+            .intro-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .galeria-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            section {
+
+                padding: 65px 6%;
+            }
+
+            .hero {
+
+                min-height: 85vh;
+            }
+
+            .hero h1 {
+
+                font-size: 43px;
+            }
+
+            .hero p {
+
+                font-size: 16px;
+            }
+
+            .titulo h2 {
+
+                font-size: 30px;
+            }
+
+            .grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .galeria-grid {
+
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .galeria-grid img {
+
+                height: 160px;
+            }
+
+            .evento {
+
+                grid-template-columns: 75px 1fr;
+            }
+        }
+
+
+        @media (max-width: 420px) {
+
+            .logo {
+
+                font-size: 17px;
+            }
+
+            nav a {
+
+                font-size: 11px;
+            }
+
+            .hero h1 {
+
+                font-size: 37px;
+            }
+
+            .galeria-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .galeria-grid img {
+
+                height: 220px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         MENÚ
+    ========================================= -->
+
+    <header>
+
+        <div class="logo">
+            LOMA DE CABRERA
+        </div>
+
+        <nav>
+
+            <a href="#inicio">Inicio</a>
+
+            <a href="#explora">Explora</a>
+
+            <a href="#hoteles">Hospedaje</a>
+
+            <a href="#comida">Comida</a>
+
+            <a href="#negocios">Negocios</a>
+
+            <a href="#eventos">Eventos</a>
+
+            <a href="#historia">Historia</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================
+         HERO
+    ========================================= -->
+
+    <section
+        class="hero"
+        id="inicio">
+
+        <div class="hero-contenido">
+
+            <small>
+                REPÚBLICA DOMINICANA · DAJABÓN
+            </small>
+
+            <h1>
+
+                Descubre
+
+                <br>
+
+                <span>
+                    Loma de Cabrera
+                </span>
+
+            </h1>
+
+            <p>
+
+                Un espacio para descubrir
+                nuestros lugares, nuestra gente,
+                nuestra cultura y todo lo que
+                hace especial a nuestro pueblo.
+
+            </p>
+
+
+            <div class="hero-botones">
+
+                <a
+                    href="#explora"
+                    class="boton">
+
+                    Explorar
+
+                </a>
+
+                <a
+                    href="#historia"
+                    class="boton boton-secundario">
+
+                    Conocer el pueblo
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         INTRODUCCIÓN
+    ========================================= -->
+
+    <section
+        class="introduccion">
+
+        <div class="intro-grid">
+
+
+            <div class="intro-texto">
+
+                <h2>
+
+                    Un pueblo para
+
+                    <span>
+                        descubrir
+                    </span>
+
+                </h2>
+
+                <p>
+
+                    Loma de Cabrera tiene
+                    lugares, historias,
+                    tradiciones y personas
+                    que forman parte de su identidad.
+
+                </p>
+
+                <p>
+
+                    Esta página busca reunir
+                    información útil para quienes
+                    viven aquí y para quienes
+                    quieran conocer nuestra comunidad.
+
+                </p>
+
+                <a
+                    href="#explora"
+                    class="boton">
+
+                    Comenzar recorrido
+
+                </a>
+
+            </div>
+
+
+            <div class="intro-imagen">
+
+                <img
+                    src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+                    alt="Paisaje">
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         EXPLORA
+    ========================================= -->
+
+    <section
+        class="destacados"
+        id="explora">
+
+        <div class="titulo">
+
+            <small>
+                DESCUBRE
+            </small>
+
+            <h2>
+                Explora Loma de Cabrera
+            </h2>
+
+            <p>
+
+                Lugares que puedes conocer
+                y disfrutar.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <!-- LUGAR 1 -->
+
+            <article class="card">
+
+                <img
+                    class="card-imagen"
+                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7"
+                    alt="Lugar natural">
+
+                <div class="card-contenido">
+
+                    <span class="categoria">
+                        Naturaleza
+                    </span>
+
+                    <h3>
+                        Lugares naturales
+                    </h3>
+
+                    <p>
+
+                        Espacios naturales
+                        y paisajes para conocer,
+                        disfrutar y fotografiar.
+
+                    </p>
+
+                    <a
+                        class="link"
+                        href="https://www.google.com/maps/search/?api=1&query=Loma+de+Cabrera,+Dajabón,+República+Dominicana"
+                        target="_blank">
+
+                        📍 Ver ubicación →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- LUGAR 2 -->
+
+            <article class="card">
+
+                <img
+                    class="card-imagen"
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+                    alt="Lugar histórico">
+
+                <div class="card-contenido">
+
+                    <span class="categoria">
+                        Historia
+                    </span>
+
+                    <h3>
+                        Sitios históricos
+                    </h3>
+
+                    <p>
+
+                        Lugares que forman parte
+                        de la historia y cultura
+                        de nuestra comunidad.
+
+                    </p>
+
+                    <a
+                        class="link"
+                        href="https://www.google.com/maps/search/?api=1&query=Loma+de+Cabrera,+Dajabón,+República+Dominicana"
+                        target="_blank">
+
+                        📍 Ver ubicación →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- LUGAR 3 -->
+
+            <article class="card">
+
+                <img
+                    class="card-imagen"
+                    src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+                    alt="Paisaje">
+
+                <div class="card-contenido">
+
+                    <span class="categoria">
+                        Para visitar
+                    </span>
+
+                    <h3>
+                        Rincones especiales
+                    </h3>
+
+                    <p>
+
+                        Descubre lugares interesantes
+                        para visitar y compartir.
+
+                    </p>
+
+                    <a
+                        class="link"
+                        href="https://www.google.com/maps/search/?api=1&query=Loma+de+Cabrera,+Dajabón,+República+Dominicana"
+                        target="_blank">
+
+                        📍 Ver ubicación →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         HOTELES
+    ========================================= -->
+
+    <section
+        class="hospedaje"
+        id="hoteles">
+
+        <div class="titulo">
+
+            <small>
+                HOSPEDAJE
+            </small>
+
+            <h2>
+                ¿Dónde quedarse?
+            </h2>
+
+            <p>
+
+                Encuentra opciones de alojamiento
+                en nuestra comunidad.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <article class="hotel-card">
+
+                <div class="hotel-icono">
+                    🏨
+                </div>
+
+                <h3>
+                    Hotel local 1
+                </h3>
+
+                <p>
+
+                    Información sobre el hotel,
+                    servicios disponibles y
+                    características del alojamiento.
+
+                </p>
+
+                <div class="hotel-info">
+
+                    📞 Teléfono:
+                    próximamente
+
+                </div>
+
+                <a
+                    class="link"
+                    href="https://www.google.com/maps/search/?api=1&query=Loma+de+Cabrera,+Dajabón,+República+Dominicana"
+                    target="_blank">
+
+                    📍 Ver ubicación →
+
+                </a>
+
+            </article>
+
+
+
+            <article class="hotel-card">
+
+                <div class="hotel-icono">
+                    🛏️
+                </div>
+
+                <h3>
+                    Hotel local 2
+                </h3>
+
+                <p>
+
+                    Agrega aquí información
+                    sobre otro alojamiento
+                    de Loma de Cabrera.
+
+                </p>
+
+                <div class="hotel-info">
+
+                    📞 Teléfono:
+                    próximamente
+
+                </div>
+
+                <a
+                    class="link"
+                    href="https://www.google.com/maps/search/?api=1&query=Loma+de+Cabrera,+Dajabón,+República+Dominicana"
+                    target="_blank">
+
+                    📍 Ver ubicación →
+
+                </a>
+
+            </article>
+
+
+
+            <article class="hotel-card">
+
+                <div class="hotel-icono">
+                    🏡
+                </div>
+
+                <h3>
+                    Próximo alojamiento
+                </h3>
+
+                <p>
+
+                    Este espacio queda preparado
+                    para agregar otro hotel,
+                    casa de huéspedes o alojamiento.
+
+                </p>
+
+                <a
+                    class="link"
+                    href="#contacto">
+
+                    Registrar alojamiento →
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         GASTRONOMÍA
+    ========================================= -->
+
+    <section
+        class="gastronomia"
+        id="comida">
+
+        <div class="titulo">
+
+            <small>
+                SABORES LOCALES
+            </small>
+
+            <h2>
+                Dónde comer
+            </h2>
+
+            <p>
+
+                Restaurantes y lugares
+                para disfrutar de la comida local.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <article class="comida">
+
+                <div class="comida-icono">
+                    🍽️
+                </div>
+
+                <h3>
+                    Restaurantes
+                </h3>
+
+                <p>
+
+                    Lugares donde disfrutar
+                    de diferentes opciones
+                    de comida.
+
+                </p>
+
+            </article>
+
+
+            <article class="comida">
+
+                <div class="comida-icono">
+                    🍔
+                </div>
+
+                <h3>
+                    Comida rápida
+                </h3>
+
+                <p>
+
+                    Opciones para comer algo
+                    rápido mientras recorres
+                    el pueblo.
+
+                </p>
+
+            </article>
+
+
+            <article class="comida">
+
+                <div class="comida-icono">
+                    ☕
+                </div>
+
+                <h3>
+                    Cafeterías
+                </h3>
+
+                <p>
+
+                    Espacios para compartir,
+                    conversar y pasar un rato
+                    agradable.
+
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         NEGOCIOS
+    ========================================= -->
+
+    <section
+        class="negocios"
+        id="negocios">
+
+        <div class="titulo">
+
+            <small>
+                COMUNIDAD
+            </small>
+
+            <h2>
+                Negocios locales
+            </h2>
+
+            <p>
+
+                Apoyemos los emprendimientos
+                y servicios de nuestra comunidad.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <article class="negocio">
+
+                <div class="negocio-icono">
+                    🛍️
+                </div>
+
+                <h3>
+                    Tiendas
+                </h3>
+
+                <p>
+
+                    Comercios y tiendas
+                    de nuestra comunidad.
+
+                </p>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=tiendas+Loma+de+Cabrera+Dajabón"
+                    target="_blank"
+                    class="link">
+
+                    📍 Buscar tiendas →
+
+                </a>
+
+            </article>
+
+
+            <article class="negocio">
+
+                <div class="negocio-icono">
+                    💇
+                </div>
+
+                <h3>
+                    Servicios
+                </h3>
+
+                <p>
+
+                    Salones, barberías
+                    y otros servicios locales.
+
+                </p>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=servicios+Loma+de+Cabrera+Dajabón"
+                    target="_blank"
+                    class="link">
+
+                    📍 Ver negocios →
+
+                </a>
+
+            </article>
+
+
+            <article class="negocio">
+
+                <div class="negocio-icono">
+                    🏪
+                </div>
+
+                <h3>
+                    Emprendimientos
+                </h3>
+
+                <p>
+
+                    Conoce proyectos y
+                    emprendimientos de personas
+                    de nuestra comunidad.
+
+                </p>
+
+                <a
+                    href="#contacto"
+                    class="link">
+
+                    Registrar negocio →
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         EVENTOS
+    ========================================= -->
+
+    <section
+        class="eventos"
+        id="eventos">
+
+        <div class="titulo">
+
+            <small>
+                AGENDA
+            </small>
+
+            <h2>
+                Eventos y actividades
+            </h2>
+
+            <p>
+
+                Próximamente podremos mostrar
+                actividades importantes del pueblo.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <article class="evento">
+
+                <div class="fecha">
+
+                    <strong>
+                        -- 
+                    </strong>
+
+                    <span>
+                        FECHA
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Próximo evento
+                    </h3>
+
+                    <p>
+
+                        Aquí podremos colocar
+                        fiestas patronales,
+                        actividades deportivas,
+                        eventos culturales
+                        y otras actividades.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="evento">
+
+                <div class="fecha">
+
+                    <strong>
+                        --
+                    </strong>
+
+                    <span>
+                        FECHA
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Actividad comunitaria
+                    </h3>
+
+                    <p>
+
+                        Un espacio para informar
+                        sobre actividades importantes
+                        para la comunidad.
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         HISTORIA
+    ========================================= -->
+
+    <section
+        class="historia"
+        id="historia">
+
+        <div class="titulo">
+
+            <small>
+                NUESTRA IDENTIDAD
+            </small>
+
+            <h2>
+                Historia y cultura
+            </h2>
+
+        </div>
+
+
+        <div class="historia-contenido">
+
+            <p>
+
+                Loma de Cabrera es un municipio
+                de la provincia Dajabón,
+                en la República Dominicana.
+
+                <br><br>
+
+                Nuestra comunidad cuenta con
+                una historia, tradiciones,
+                costumbres y personas que
+                forman parte de su identidad.
+
+                <br><br>
+
+                Esta sección irá creciendo
+                con información histórica,
+                fotografías antiguas,
+                personajes importantes,
+                tradiciones y acontecimientos
+                que forman parte de la memoria
+                de nuestro pueblo.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         GALERÍA
+    ========================================= -->
+
+    <section
+        class="galeria">
+
+        <div class="titulo">
+
+            <small>
+                FOTOGRAFÍAS
+            </small>
+
+            <h2>
+                Loma de Cabrera en imágenes
+            </h2>
+
+            <p>
+
+                Una galería para mostrar
+                los paisajes y momentos
+                de nuestra comunidad.
+
+            </p>
+
+        </div>
+
+
+        <div class="galeria-grid">
+
+            <img
+                src="https://images.unsplash.com/photo-1500534623283-312aade485b7"
+                alt="Loma de Cabrera">
+
+            <img
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+                alt="Paisaje">
+
+            <img
+                src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+                alt="Naturaleza">
+
+            <img
+                src="https://images.unsplash.com/photo-1500534623283-312aade485b7"
+                alt="Paisaje">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CONTACTO
+    ========================================= -->
+
+    <section
+        class="contacto"
+        id="contacto">
+
+        <div class="titulo">
+
+            <small>
+                PARTICIPA
+            </small>
+
+            <h2>
+                Ayuda a construir esta página
+            </h2>
+
+            <p>
+
+                ¿Conoces un lugar, negocio,
+                evento o historia que debería
+                aparecer aquí?
+
+            </p>
+
+        </div>
+
+
+        <a
+            href="mailto:contacto@lomadecabrera.com"
+            class="boton">
+
+            📩 Contactarnos
+
+        </a>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Loma de Cabrera
+        </p>
+
+        <p>
+            Descubre · Conoce · Comparte
+        </p>
+
+    </footer>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6aa86f4a47c9e9344a37df62/1k2gv5euo';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>
